@@ -3,3 +3,45 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: #766F68;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.2rem 1.6rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #D2872C;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.2rem;
+}
+
+.nav-item:link,
+.nav-item:visited {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-item:hover,
+.nav-item:active {
+    font-weight: 500;
+    text-decoration: underline;
+}
