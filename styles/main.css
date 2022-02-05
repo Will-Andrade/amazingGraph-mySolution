@@ -32,6 +32,10 @@ a { text-decoration: none; }
     padding: 3.2rem 1.6rem;
 }
 
+.nav {
+    position: relative;
+}
+
 .logo:link,
 .logo:visited {
     font-size: 2.4rem;
@@ -43,30 +47,62 @@ a { text-decoration: none; }
 .logo:hover,
 .logo:active { color: #bd7a28; }
 
-.navigation {
-    position: relative;
-}
-
-.toggle-button {
+/* HAMBURGUER MENU */
+.menu-btn {
     display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 2.2rem;
     height: 2.1rem;
+    transition: all .3s ease-in-out;
 }
 
-.toggle-button .bar {
+.menu-btn .bar {
     background-color: #766F68;
     height: .25rem;
     width: 100%;
+    transition: all .3s ease-in-out;
 }
-  
+
+/* HAMBURGUER CLOSE/OPEN EFFECT */
+/* Removing bars */
+.menu-btn.close .second-bar {
+    display: none;
+}
+
+.menu-btn.close .third-bar {
+    display: none;
+}
+
+/* Rotating bars */
+.menu-btn.close .first-bar {
+    transform: rotate(45deg) translate(.7rem, .7rem);
+}
+
+.menu-btn.close .fourth-bar {
+    transform: rotate(-45deg) translate(.6rem, -.6rem);
+}
 
 .nav-list {
     align-items: center;
     display: flex;
     gap: 1.2rem;
     list-style: none;
+    position: relative;
+}
+
+.nav-list.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    border-radius: 15px;
+    background-color: #766F68;
+    opacity: .8;
+    color: #FFF;
+    padding: 2rem;
+    width: auto;
 }
 
 .nav-item:link,
@@ -189,11 +225,11 @@ a { text-decoration: none; }
         font-size: 1.6rem;
     }
 
-    .toggle-button {
+    .menu-btn {
         display: flex;
     }
 
-    .nav-item {
+    .nav-list {
         display: none;
         width: 100%;
     }
