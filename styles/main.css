@@ -145,6 +145,20 @@ a { text-decoration: none; }
 /* MEDIA QUERIES */
 /**************************/
 
+@media (max-width: 75em) {
+    .hero-text-box {
+        transform: translate(28%, 0);
+    }
+
+    .title-header {
+        font-size: 3.53rem;
+    }
+
+    .introduction {
+        font-size: 1.454rem;
+    }
+}
+
 @media (max-width: 63em) {
     body {
         font-size: 56.25%;
