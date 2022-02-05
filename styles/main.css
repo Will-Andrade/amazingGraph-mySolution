@@ -1,3 +1,12 @@
+/**************************/
+/* GENERAL STYLING */
+/**************************/
+
+:root { 
+    --main-color: #D2872C; 
+    --transition-effect: all .3s ease-in-out;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,79 +14,101 @@
 }
 
 body {
-    font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1;
-    font-weight: 400;
     color: #766F68;
+    font: normal normal 400 62.5%/1 'Roboto', sans-serif;
 }
+
+a { text-decoration: none; }
 
 /**************************/
 /* HEADER */
 /**************************/
 
 .header {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
-    padding: 3.2rem 1.6rem;
     margin-bottom: 3.2rem;
+    padding: 3.2rem 1.6rem;
 }
 
-.logo {
+.logo:link,
+.logo:visited {
     font-size: 2.4rem;
     font-weight: 700;
-    color: #D2872C;
-    cursor: pointer;
+    color: var(--main-color);
+    transition: var(--transition-effect);
 }
 
+.logo:hover,
+.logo:active { color: #bd7a28; }
+
+.navigation {
+    position: relative;
+}
+
+.toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.2rem;
+    height: 2.1rem;
+}
+
+.toggle-button .bar {
+    background-color: #766F68;
+    height: .25rem;
+    width: 100%;
+}
+  
+
 .nav-list {
-    display: flex;
     align-items: center;
-    list-style: none;
+    display: flex;
     gap: 1.2rem;
+    list-style: none;
 }
 
 .nav-item:link,
 .nav-item:visited {
-    font-size: 1.6rem;
-    text-decoration: none;
     color: inherit;
-    font-weight: 400;
+
+    /* Setup for underline effect on hover */
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-size: 0% .1rem;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    transition: var(--transition-effect);
+
+    font-size: 1.6rem;
 }
 
 .nav-item:hover,
-.nav-item:active {
-    font-weight: 500;
-    text-decoration: underline;
+.nav-item:active,
+.nav-item:focus-visible {
+    /* Underline effect */
+    background-size: 100% 0.1em;
+    color: var(--main-color);
 }
 
 /**************************/
 /* MAIN CONTENT */
 /**************************/
 
-/* 
-    - Font sizes (px)
-    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-    - Spacing system (px)
-    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-*/
-
 .content {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
-img {
+.hero-img-box img {
     height: auto;
     width: 100%;
 }
 
 .hero-text-box {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 2rem;
     transform: translate(30%, 0);
 }
@@ -95,17 +126,74 @@ img {
 .btn-cta:link,
 .btn-cta:visited {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    text-decoration: none;
     color: #FFF;
-    background-color: #D2872C;
+    background-color: var(--main-color);
     padding: 1.2rem 4.8rem;
-    transition: all .3s;
+    transition: var(--transition-effect);
     border-radius: 15px;
 }
 
 .btn-cta:hover,
-.btn-cta:active {
+.btn-cta:active,
+.btn-cta:focus-visible {
     background-color: #bd7a28;
+}
+
+/**************************/
+/* MEDIA QUERIES */
+/**************************/
+
+@media (max-width: 63em) {
+    body {
+        font-size: 56.25%;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text-box {
+        grid-row: 2;
+        align-items: center;
+        transform: none;
+    }
+    
+    .hero-img-box {
+        grid-row: 1;
+    }
+}
+
+@media (max-width: 44em) {
+    body {
+        font-size: 50%;
+    }
+
+    .logo:link,
+    .logo:visited {
+        font-size: 1.6rem;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .nav-item {
+        display: none;
+        width: 100%;
+    }
+
+    .content {
+        margin: 0 3rem;
+        text-align: center;
+    }
+
+    .title-header {
+        font-size: 2.4rem;
+    }
+
+    .introduction {
+        font-size: 1.2rem;
+    }
 }
