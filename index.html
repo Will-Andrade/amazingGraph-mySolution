@@ -12,8 +12,16 @@
 </head>
 <body>
     <header class="header">
-        <p class="logo">Amazing Graph</p>
-        <nav>
+        <a class="logo" href="#">AmazingGraph</a>
+        <nav class="navigation">
+            <!-- This gonna be the hamburguer menu -->
+            <a data-js="toggle-btn" href="#" class="toggle-button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+
             <ul class="nav-list">
                 <li><a class="nav-item" href="#">Home</a></li>
                 <li><a class="nav-item" href="#">Features</a></li>
@@ -31,7 +39,10 @@
             <a class="btn-cta" href="#">Start now</a>
         </div>
         <div class="hero-img-box">
-            <img src="assets/team.jpg" alt="" />
+            <img 
+                src="assets/team.jpg" 
+                alt="A group of people creating graphics as a team" 
+            />
         </div>
     </main>
 </body>
