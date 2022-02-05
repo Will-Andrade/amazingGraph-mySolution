@@ -91,20 +91,6 @@ a { text-decoration: none; }
     position: relative;
 }
 
-.nav-list.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 15%;
-    right: 10%;
-    border-radius: 15px;
-    background-color: #766F68;
-    opacity: .8;
-    color: #FFF;
-    padding: 2rem;
-    width: auto;
-}
-
 .nav-item:link,
 .nav-item:visited {
     color: inherit;
@@ -233,6 +219,20 @@ a { text-decoration: none; }
         display: none;
         width: 100%;
     }
+
+    .nav-list.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 15%;
+        right: 10%;
+        border-radius: 15px;
+        background-color: #766F68;
+        opacity: .8;
+        color: #FFF;
+        padding: 2rem;
+        width: auto;
+    }   
 
     .content {
         margin: 0 3rem;
